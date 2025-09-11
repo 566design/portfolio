@@ -1,10 +1,16 @@
 /* ベース */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; /* ← 横スクロール防止 */
+}
+
 body {
     font-family: "Noto Sans JP", sans-serif;
     background: #12263A;
     color: #E6D7C1;
     line-height: 1.7;
-    margin: 0;
 }
 h1, h2 {
     font-family: "Noto Serif JP", serif;
@@ -153,13 +159,6 @@ footer {
 
 /* スマホ対応（768px以下） */
 @media (max-width: 768px) {
-    body {
-    font-size: 16px; /* 文字ちょっと大きめに */
-    }
-
-    h2 {
-    font-size: 20px;
-    }
 
     .cards {
     grid-template-columns: 1fr; /* 1カラム */
@@ -180,5 +179,41 @@ footer {
 
     .icons i {
     font-size: 20px; /* アイコンも少し小さめ */
+    }
+}
+
+/* スマホ対応（768px以下） */
+@media (max-width: 768px) {
+    body {
+    font-size: 16px;
+    }
+
+    h1 {
+    font-size: 20px; /* ← ここでタイトルを小さく */
+    }
+
+    h2 {
+    font-size: 20px;
+    }
+
+    .cards {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    }
+
+    .card {
+    padding: 16px;
+    }
+
+    .hero {
+    height: 40vh;
+    }
+
+    .hero h2 {
+    font-size: 28px;
+    }
+
+    .icons i {
+    font-size: 20px;
     }
 }
