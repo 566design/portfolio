@@ -1,219 +1,242 @@
-/* ベース */
+/* =========================
+ベース
+========================= */
 html, body {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    overflow-x: hidden; /* ← 横スクロール防止 */
+margin: 0;
+padding: 0;
+width: 100%;
+  overflow-x: hidden; /* 横スクロール防止 */
 }
 
 body {
-    font-family: "Noto Sans JP", sans-serif;
-    background: #12263A;
-    color: #E6D7C1;
-    line-height: 1.7;
+font-family: "Noto Sans JP", sans-serif;
+background: #12263A;
+color: #E6D7C1;
+line-height: 1.7;
 }
+
 h1, h2 {
-    font-family: "Noto Serif JP", serif;
-    letter-spacing: 0.1em;
+font-family: "Noto Serif JP", serif;
+letter-spacing: 0.1em;
 }
+
 h2 {
-    font-size: 24px;
-    margin-bottom: 24px;
+font-size: 24px;
+margin-bottom: 24px;
 }
+
 section {
-    padding: 96px 20px;
-    max-width: 1040px;
-    margin: 0 auto;
+padding: 96px 20px;
+max-width: 1040px;
+margin: 0 auto;
 }
+
 header, footer {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 24px 20px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+padding: 24px 20px;
 }
+
 nav ul {
-    list-style: none;
-    display: flex;
-    gap: 24px;
-    margin: 0;
-    padding: 0;
+list-style: none;
+display: flex;
+gap: 24px;
+margin: 0;
+padding: 0;
 }
+
 a {
-    color: #E6D7C1;
-    text-decoration: none;
+color: #E6D7C1;
+text-decoration: none;
 }
 a:hover {
-    opacity: 0.7;
+opacity: 0.7;
 }
 
-/* ヒーロー */
+/* =========================
+ヒーロー
+========================= */
 .hero {
-  height: 20vh; /* 小さめにしたい高さ */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    position: relative;
+  height: 20vh; /* PCでは小さめ */
+display: flex;
+align-items: center;
+justify-content: center;
+text-align: center;
+position: relative;
 
-    background: url("top.png") no-repeat center center / cover;
+background: url("top.png") no-repeat center center / cover;
 }
 
 .hero::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0,0,0,0.3); /* ← 0.5=50%暗くする */
+content: "";
+position: absolute;
+top: 0; left: 0; right: 0; bottom: 0;
+  background: rgba(0,0,0,0.3); /* 背景画像を暗く */
 }
 
 .hero h2 {
   position: relative; /* フィルターの上に文字を表示 */
-    font-size: 40px;
-    color: #E6D7C1;
-    text-shadow: 0 4px 12px rgba(0,0,0,0.6);
-    line-height: 1.5;
-    margin: 0;
-}
-.btn {
-    display: inline-block;
-    background: #C9A96A;
-    color: #12263A;
-    padding: 12px 20px;
-    border-radius: 999px;
-    margin-top: 24px;
+font-size: 40px;
+color: #E6D7C1;
+text-shadow: 0 4px 12px rgba(0,0,0,0.6);
+line-height: 1.5;
+margin: 0;
 }
 
-/* カード */
+/* ボタン */
+.btn {
+display: inline-block;
+background: #C9A96A;
+color: #12263A;
+padding: 12px 20px;
+border-radius: 999px;
+margin-top: 24px;
+text-decoration: none;
+font-weight: 600;
+transition: 0.3s;
+}
+.btn:hover {
+opacity: 0.8;
+}
+
+/* =========================
+カード
+========================= */
 .cards {
-    display: grid;
-  grid-template-columns: repeat(3, 1fr); /* 3列で横並び */
-  gap: 24px; /* 間隔 */
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+  gap: 32px; /* ← PCでも余裕を持たせる */
 }
 
 .card {
-    background: rgba(230, 215, 193, 0.06);
-    border: 1px solid rgba(230, 215, 193, 0.18);
-    border-radius: 16px;
-    padding: 24px;
-    box-shadow: 0 8px 24px rgba(0,0,0,0.15);
-    text-align: center;
+display: flex;
+flex-direction: column;
+align-items: center;
+text-align: center;
+padding: 16px;
+border: 1px solid rgba(230, 215, 193, 0.2);
+border-radius: 12px;
+background: rgba(255,255,255,0.02);
 }
+
+/* Work のカードだけ高さを揃える */
+.work-section .card {
+min-height: 300px;
+}
+
+/* About / Contact のカードは高さを自然に */
+.about-section .card,
+.contact-section .card {
+min-height: auto;
+}
+
 .card img {
-    width: 100%;
-    border-radius: 12px;
-    border: 1px solid rgba(230, 215, 193, 0.18);
-    object-fit: cover;
-}
-
-.cafe-banner {
-    display: flex;
-    flex-direction: column;
-  justify-content: center; /* 縦中央 */
-  align-items: center;     /* 横中央 */
-}
-
-.cafe-banner img {
-  margin-bottom: 12px; /* タイトルとの間隔 */
+max-width: 100%;
+height: auto;
+  flex-grow: 1;              /* 縦の余白を埋めて中央に */
+  object-fit: contain;       /* 画像比率を保つ */
 }
 
 .card p {
-    font-size: 14px;
-    margin-top: 12px;
+margin-top: 16px;
+font-size: 14px;
 }
 
-/* Contact icons */
+/* =========================
+Contact
+========================= */
 .icons {
-    display: flex;
-    justify-content: center;
-    gap: 24px;
-    margin-top: 24px;
+display: flex;
+justify-content: center;
+gap: 24px;
+margin-top: 24px;
 }
-.icons img {
-    width: 24px;
-    height: 24px;
-}
-
 .icons i {
-    font-size: 24px;
-    color: #E6D7C1;
-    transition: 0.3s;
+font-size: 24px;
+color: #E6D7C1;
+transition: 0.3s;
 }
 .icons i:hover {
-    opacity: 0.7;
+opacity: 0.7;
 }
 
-/* フッター */
+/* =========================
+フッター
+========================= */
 footer {
-    border-top: 1px solid rgba(230, 215, 193, 0.18);
-    text-align: center;
-    padding: 48px 20px;
-    font-size: 14px;
-    opacity: 0.8;
+border-top: 1px solid rgba(230, 215, 193, 0.18);
+text-align: center;
+padding: 48px 20px;
+font-size: 14px;
+opacity: 0.8;
 }
+
+/* セクションタイトル */
+section h2 {
+text-align: center;
+font-size: 24px;
+margin-bottom: 24px;
+}
+
+/* WorkセクションのMOREボタン */
+.more-btn {
+  text-align: right;  /* 右寄せ */
+margin-top: 16px;
+  padding-right: 20px; /* 右端から少し余白 */
+}
+
+.note {
+text-align: center;
+font-size: 14px;
+opacity: 0.7;
+margin-bottom: 24px;
+}
+
+
+/* =========================
+レスポンシブ
+========================= */
 
 /* タブレット対応（1024px以下） */
 @media (max-width: 1024px) {
-    .cards {
+.cards {
     grid-template-columns: repeat(2, 1fr);
-    }
+}
 }
 
 /* スマホ対応（768px以下） */
 @media (max-width: 768px) {
-
-    .cards {
-    grid-template-columns: 1fr; /* 1カラム */
-    gap: 16px;
-    }
-
-    .card {
-    padding: 16px;
-    }
-
-    .hero {
-    height: 40vh; /* スマホはヒーロー画像を小さめに */
-    }
-
-    .hero h2 {
-    font-size: 28px;
-    }
-
-    .icons i {
-    font-size: 20px; /* アイコンも少し小さめ */
-    }
-}
-
-/* スマホ対応（768px以下） */
-@media (max-width: 768px) {
-    body {
+body {
     font-size: 16px;
-    }
+}
 
-    h1 {
-    font-size: 20px; /* ← ここでタイトルを小さく */
-    }
-
-    h2 {
+h1 {
     font-size: 20px;
-    }
+}
 
-    .cards {
+h2 {
+    font-size: 20px;
+}
+
+.cards {
     grid-template-columns: 1fr;
     gap: 16px;
-    }
+}
 
-    .card {
+.card {
     padding: 16px;
-    }
+}
 
-    .hero {
-    height: 40vh;
-    }
+.hero {
+    height: 40vh; /* スマホは少し大きめ */
+}
 
-    .hero h2 {
+.hero h2 {
     font-size: 28px;
-    }
+}
 
-    .icons i {
+.icons i {
     font-size: 20px;
-    }
+}
 }
