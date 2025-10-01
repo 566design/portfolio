@@ -1,0 +1,232 @@
+/* ---------- Base ---------- */
+:root{
+--cream:#FCF8F2;
+  --panel:#D4EEF4;          /* About縺ｮ豺｡繝悶Ν繝ｼ */
+  --accent:#6BB8E8;         /* CTA */
+  --accent-d:#559dc8;       /* CTA hover */
+  --brown:#6b4a3b;          /* 隕句�縺嶺ｸ句ｸｯ縺ｪ縺ｩ縺ｫ菴ｿ縺�↑繧� */
+--ink:#333;
+--ink-weak:#666;
+  --side:#176B75;           /* 繧ｵ繧､繝牙ｸｯ */
+--radius-lg:20px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+margin:0;
+color:var(--ink);
+background:var(--cream);
+font-family:"Noto Sans JP", system-ui, -apple-system, Segoe UI, Roboto, "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+line-height:1.7;
+letter-spacing:.02em;
+}
+img{max-width:100%;height:auto;display:block}
+
+/* 繧ｵ繧､繝牙ｸｯ�亥ｷｦ蜿ｳ�� */
+.side-bands::before,
+.side-bands::after{
+content:"";
+position:fixed;
+top:0; bottom:0;
+width:56px;
+background:var(--side);
+z-index:-1;
+}
+.side-bands::before{left:0}
+.side-bands::after{right:0}
+
+/* 繧ｳ繝ｳ繝�リ */
+.container{
+width:min(1100px, 92vw);
+margin-inline:auto;
+}
+
+/* 繧｢繧ｯ繧ｻ繧ｷ繝薙Μ繝�ぅ逕ｨ縺ｫ隕冶ｦ夐撼陦ｨ遉ｺ */
+.sr-only{
+position:absolute !important;
+clip:rect(0 0 0 0);
+width:1px;height:1px; margin:-1px; overflow:hidden; white-space:nowrap; border:0;
+}
+
+/* ---------- FV ---------- */
+.fv{
+position:relative;
+isolation:isolate;
+color:#fff;
+padding: clamp(64px, 12vw, 120px) 0 64px;
+background:
+    linear-gradient(0deg, rgba(0,0,0,.35), rgba(0,0,0,.35)),
+    url("image/top.jpg") center/cover no-repeat; /* 竊仙ｷｮ縺玲崛縺� */
+}
+.fv__inner{display:flex; flex-direction:column; gap:14px}
+.logo{
+font: 700 clamp(28px, 4vw, 40px)/1.1 "Josefin Sans", sans-serif;
+letter-spacing:.06em;
+}
+.tagline{
+font-weight:700;
+display:inline-block;
+background:rgba(0,0,0,.25);
+padding:.35em .7em;
+border-radius:10px;
+width:fit-content;
+}
+.skip{
+display:flex; gap:18px;
+position:absolute; left:50%; translate:-50% 0;
+bottom:-18px; font-size:14px;
+}
+.skip a{color:#fff; text-decoration:none; opacity:.9}
+.skip a:hover{opacity:1; text-decoration:underline}
+
+/* CTA 蜈ｱ騾� */
+.cta{
+display:inline-block;
+background:var(--accent);
+color:#fff; text-decoration:none; font-weight:700;
+padding:12px 36px; border-radius:999px;
+box-shadow:0 6px 18px rgba(107,184,232,.35);
+transition:.25s ease;
+}
+.cta:hover{background:var(--accent-d); transform:translateY(-1px)}
+.cta--large{font-size:clamp(16px, 2.2vw, 20px); padding:14px 44px}
+
+/* ---------- Sections ---------- */
+.section{padding-block: clamp(56px, 10vw, 96px)}
+.section--cream{background:var(--cream)}
+.section--white{background:#fff}
+.center{text-align:center}
+
+/* ---------- About ---------- */
+.about{
+display:grid;
+grid-template-columns: 1fr 1.1fr;
+align-items:center;
+gap: min(5vw, 48px);
+background:var(--panel);
+border-radius: var(--radius-lg);
+padding: clamp(20px, 5vw, 40px);
+box-shadow: 0 8px 26px rgba(23,107,117,.12);
+}
+.about__photo img{
+border-radius:14px;
+box-shadow:0 8px 18px rgba(0,0,0,.12);
+}
+.balloon{
+position:relative;
+background:#fff;
+border-radius:22px;
+padding:22px 26px;
+font-size:16px;
+box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+.balloon::after{
+content:"";
+position:absolute;
+left:-14px; top:38%;
+border:10px solid transparent;
+border-right-color:#fff;
+}
+.balloon p{margin:.4em 0}
+.balloon strong{font-weight:700}
+
+/* ---------- Menu ---------- */
+.sec-head{ text-align:center; margin-bottom:28px }
+.sec-head .eyebrow{
+color:var(--ink-weak); font-size:13px; letter-spacing:.1em;
+}
+.sec-head h2{
+font:700 clamp(20px, 4vw, 28px)/1.2 "Josefin Sans", sans-serif;
+margin-top:6px;
+}
+
+.menu-cards {
+  list-style: none;   /* 鮟剃ｸｸ豸医☆ */
+  padding: 0;         /* 蟾ｦ縺ｮ菴咏區豸医☆ */
+  margin: 0;          /* 荳贋ｸ九�菴咏區繧ゅΜ繧ｻ繝�ヨ */
+  display: flex;      /* 讓ｪ荳ｦ縺ｳ */
+  justify-content: center; /* 荳ｭ螟ｮ蟇�○ */
+  gap: 40px;          /* 蜷�き繝ｼ繝峨�髢馴囈 */
+}
+
+.menu-card {
+text-align: center;
+}
+
+.menu-card img {
+    width:min(220px, 46vw);
+    aspect-ratio:1/1;
+    object-fit:cover;
+    border-radius:50%;
+    box-shadow:0 8px 20px rgba(0,0,0,.12);
+}
+
+.menu-card__img img {
+width: 100%;
+height: 100%;
+object-fit: cover;       /* 譫�縺�▲縺ｱ縺�↓蜿弱ａ繧� */
+display: block;
+}
+.menu-card p{
+margin-top:12px; font-weight:700; letter-spacing:.08em;
+font-family:"Josefin Sans", sans-serif;
+}
+
+/* ---------- Access ---------- */
+.sec-title{
+text-align:center;
+font:700 clamp(20px, 4vw, 28px)/1.2 "Josefin Sans", sans-serif;
+margin-bottom:24px;
+}
+.access-card{
+display:grid;
+grid-template-columns: 280px 1fr;
+gap: clamp(18px, 4vw, 36px);
+align-items:center;
+background:#fff;
+border-radius: var(--radius-lg);
+padding: clamp(18px, 4vw, 32px);
+box-shadow:0 10px 28px rgba(0,0,0,.10);
+}
+.access-card__map img{ margin-inline:auto }
+.access-card__info{
+display:grid; gap:10px; font-size:15px;
+}
+.access-card__info dt{
+font-weight:700; color:var(--ink-weak); width:7em;
+}
+.access-card__info > div{
+display:flex; gap:12px; align-items:baseline; border-bottom:1px dashed #e8e8e8;
+padding:8px 0;
+}
+
+/* ---------- Footer ---------- */
+.footer{
+  background:#5d4337; /* 繧�ｏ繧峨°縺�ヶ繝ｩ繧ｦ繝ｳ */
+color:#fff; padding:46px 0 28px; text-align:center;
+}
+.footer__head{ margin-bottom:12px; opacity:.9 }
+.contact{ display:flex; gap:18px; justify-content:center; margin-bottom:12px }
+.icon{
+width:40px; height:40px; display:grid; place-items:center;
+border-radius:12px; background:rgba(255,255,255,.17);
+transition:.25s;
+}
+.icon:hover{ background:rgba(255,255,255,.3) }
+.icon svg{ width:22px; height:22px; fill:#fff }
+.copy{ opacity:.7; font-size:12px }
+
+/* ---------- Responsive ---------- */
+@media (max-width: 900px){
+.about{ grid-template-columns:1fr; }
+.balloon::after{ left:28px; top:unset; bottom:-18px; border-right-color:transparent; border-top-color:#fff }
+.menu-cards{ grid-template-columns:1fr 1fr; }
+}
+@media (max-width: 640px){
+.side-bands::before, .side-bands::after{ display:none }
+.menu-cards{ grid-template-columns:1fr; }
+.access-card{ grid-template-columns:1fr; text-align:center }
+.access-card__info dt{ width:auto }
+.skip{ display:none }
+}

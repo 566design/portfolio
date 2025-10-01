@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>fika | あなたの街の小さな北欧カフェ</title>
+<meta name="description" content="北欧のやさしい時間を感じられるカフェ『fika』の紹介ページ。メニュー・アクセス情報はこちら。" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- 見出しは北欧っぽい丸み、本文は読みやすい日本語フォント -->
+<link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+<!-- サイドに北欧ブルーの縦帯 -->
+<div class="side-bands"></div>
+
+<!-- ===================== FV ===================== -->
+<header class="fv" id="top" role="banner" aria-label="ファーストビュー">
+    <!-- 背景画像は CSS の .fv に設定 / 差し替え: hero.jpg -->
+    <div class="container fv__inner">
+    <p class="logo">fika</p>
+    <p class="tagline">あなたの街の小さな北欧カフェ</p>
+    <a class="cta" href="#reserve">予約する</a>
+    </div>
+    <nav class="skip">
+    <a href="#about">fikaについて</a>
+    <a href="#menu">メニュー</a>
+    <a href="#access">アクセス</a>
+    </nav>
+</header>
+
+<main id="main">
+    <!-- ===================== About ===================== -->
+    <section class="section section--cream" id="about" aria-labelledby="about-title">
+    <div class="container">
+        <div class="about">
+        <figure class="about__photo">
+            <!-- 差し替え: about.jpg -->
+            <img src="image/cafe.jpg" alt="fika の外観写真" width="560" height="360" loading="lazy">
+        </figure>
+
+        <div class="about__panel">
+            <h2 id="about-title" class="sr-only">fikaについて</h2>
+            <div class="balloon">
+            <p><strong>fika（フィーカ）</strong>はスウェーデンの「コーヒーを楽しむひと時」という文化。</p>
+            <p>fikaでは、北欧のやさしい時間を感じられる空間をご用意しています。</p>
+            </div>
+        </div>
+        </div>
+    </div>
+    </section>
+
+    <!-- ===================== Menu ===================== -->
+    <section class="section section--white" id="menu" aria-labelledby="menu-title">
+    <div class="container">
+        <header class="sec-head">
+        <p class="eyebrow">あなたの気分に合わせて</p>
+        <h2 id="menu-title">Choose Your Style.</h2>
+        </header>
+
+        <ul class="menu-cards" role="list">
+        <li class="menu-card">
+            <!-- 差し替え: drink.jpg -->
+            <img src="image/late.jpg" alt="ラテアートのカップ" width="240" height="240" loading="lazy">
+            <p>Drink</p>
+        </li>
+        <li class="menu-card">
+            <!-- 差し替え: food.jpg -->
+            <img src="image/pasta.jpg" alt="パスタのプレート" width="240" height="240" loading="lazy">
+            <p>Food</p>
+        </li>
+        <li class="menu-card">
+            <!-- 差し替え: dessert.jpg -->
+            <img src="image/08.Indoor_Contrast+_TP_V.jpg" alt="デザートのケーキ" width="240" height="240" loading="lazy">
+            <p>Dessert</p>
+        </li>
+        </ul>
+    </div>
+    </section>
+
+    <!-- ===================== Access ===================== -->
+    <section class="section section--cream" id="access" aria-labelledby="access-title">
+    <div class="container">
+        <h2 id="access-title" class="sec-title">Access</h2>
+        <div class="access-card">
+        <figure class="access-card__map">
+            <!-- 差し替え: map-phone.png（スマホに地図のイラスト） -->
+            <img src="image/map.png" alt="地図のイラスト" width="240" height="420" loading="lazy">
+        </figure>
+        <dl class="access-card__info">
+            <div>
+            <dt>住所</dt>
+            <dd>○○県○○市○○町1-2-3</dd>
+            </div>
+            <div>
+            <dt>営業時間</dt>
+            <dd>11:00〜20:00（L.O.19:30）</dd>
+            </div>
+            <div>
+            <dt>定休日</dt>
+            <dd>火曜日</dd>
+            </div>
+            <div>
+            <dt>電話番号</dt>
+            <dd>000-0000-0000</dd>
+            </div>
+            <div>
+            <dt>アクセス</dt>
+            <dd>JR○○駅を西に2分</dd>
+            </div>
+        </dl>
+        </div>
+    </div>
+    </section>
+
+    <!-- ===================== CTA（下） ===================== -->
+    <section class="section section--white" id="reserve">
+    <div class="container center">
+        <a class="cta cta--large" href="mailto:info@example.com?subject=%E3%80%90fika%E4%BA%88%E7%B4%84%E3%80%91">メールで予約する</a>
+    </div>
+    </section>
+</main>
+
+<!-- ===================== Footer ===================== -->
+<footer class="footer">
+    <div class="container">
+    <p class="footer__head">お問い合わせ</p>
+    <div class="contact">
+        <!-- SVGアイコン（外部ライブラリ不要） -->
+        <a class="icon" href="https://www.instagram.com/" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.2c3.2 0 3.6 0 4.9.1 1.2.1 1.8.2 2.3.4.6.2 1 .5 1.5.9.5.5.8.9.9 1.5.2.5.3 1.1.4 2.3.1 1.3.1 1.7.1 4.9s0 3.6-.1 4.9c-.1 1.2-.2 1.8-.4 2.3-.2.6-.5 1-.9 1.5-.5.5-.9.8-1.5.9-.5.2-1.1.3-2.3.4-1.3.1-1.7.1-4.9.1s-3.6 0-4.9-.1c-1.2-.1-1.8-.2-2.3-.4-.6-.2-1-.5-1.5-.9-.5-.5-.8-.9-.9-1.5-.2-.5-.3-1.1-.4-2.3C2.2 15.6 2.2 15.2 2.2 12s0-3.6.1-4.9c.1-1.2.2-1.8.4-2.3.2-.6.5-1 .9-1.5.5-.5.9-.8 1.5-.9.5-.2 1.1-.3 2.3-.4C8.4 2.2 8.8 2.2 12 2.2ZM12 0C8.7 0 8.3 0 7 0.1 5.7 0.2 4.8 0.4 4 0.7 3.1 1 2.4 1.4 1.7 2.1 1 2.8 0.6 3.5 0.3 4.4 0 5.2-0.2 6.1-0.1 7.4 0 8.7 0 9.1 0 12s0 3.3 0.1 4.6c0.1 1.3 0.3 2.2 0.6 3.1 0.3 0.9 0.7 1.6 1.4 2.3 0.7 0.7 1.4 1.1 2.3 1.4 0.9 0.3 1.8 0.5 3.1 0.6C8.7 24 9.1 24 12 24s3.3 0 4.6-0.1c1.3-0.1 2.2-0.3 3.1-0.6 0.9-0.3 1.6-0.7 2.3-1.4 0.7-0.7 1.1-1.4 1.4-2.3 0.3-0.9 0.5-1.8 0.6-3.1C24 15.3 24 14.9 24 12s0-3.3-0.1-4.6c-0.1-1.3-0.3-2.2-0.6-3.1-0.3-0.9-0.7-1.6-1.4-2.3C21.2 1.4 20.5 1 19.6 0.7 18.7 0.4 17.8 0.2 16.5 0.1 15.3 0 14.9 0 12 0Zm0 5.8A6.2 6.2 0 1 0 12 18.2 6.2 6.2 0 0 0 12 5.8Zm0 10.3A4.1 4.1 0 1 1 12 7.9a4.1 4.1 0 0 1 0 8.2Zm6.6-10.8a1.4 1.4 0 1 1-2.7 0 1.4 1.4 0 0 1 2.7 0Z"/></svg>
+        </a>
+        <a class="icon" href="mailto:info@example.com" aria-label="メール">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 4h20a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2Zm0 2v.5l10 6.5 10-6.5V6H2Zm20 12V9.3l-9.3 6.1a2 2 0 0 1-2.1 0L1.2 9.3V18H22Z"/></svg>
+        </a>
+    </div>
+    <p class="copy">©2025 fika</p>
+    </div>
+</footer>
+
+<script>
+    // 予約ボタンなどのスムーススクロール
+    document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+        const id = a.getAttribute('href');
+        if (id.length > 1) {
+        e.preventDefault();
+        document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
+        }
+    });
+    });
+</script>
+</body>
+</html>
