@@ -120,15 +120,18 @@ border-radius: 12px;
 background: rgba(255,255,255,0.02);
 }
 
-/* Work のカードだけ高さを揃える */
+/* Work のカードは正方形に */
 .work-section .card {
-min-height: 300px;
+  aspect-ratio: 1 / 1;       /* 正方形固定 */
+  min-height: auto;          /* ↑で高さ固定するから不要 */
+  overflow: hidden;          /* はみ出した画像を隠す */
 }
 
-/* About / Contact のカードは高さを自然に */
-.about-section .card,
-.contact-section .card {
-min-height: auto;
+/* 中の画像 */
+.work-section .card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;          /* カードにピッタリ収める */
 }
 
 .card img {
@@ -239,4 +242,28 @@ h2 {
 .icons i {
     font-size: 20px;
 }
+}
+
+.work-card img {
+  width: 100%;
+  aspect-ratio: 1 / 1;   /* 正方形にする */
+  object-fit: cover;     /* はみ出た部分を切り取り */
+  border-radius: 8px;    /* 角丸にするなら */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* バナー（そのまま比率維持） */
+.card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+/* LP専用（正方形に収める） */
+.work-lp {
+  aspect-ratio: 1 / 1;      /* 正方形の枠 */
+  object-fit: contain;       /* 全体を縮小して収める */
+  background: #fff;          /* 空白部分の背景色 */
+  padding: 4px;              /* ちょっと余白つけても可 */
 }
